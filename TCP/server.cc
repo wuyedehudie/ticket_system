@@ -42,7 +42,7 @@ namespace tcs{
             beast::http::response<beast::http::string_body> response;
             response.version(request.version());
             response.result(beast::http::status::ok);
-            response.set(beast::http::field::server, "Boost server");
+            response.set(beast::http::field::server, "Boost tcpServer");
 
             //解析请求内容
             // 匹配路由
@@ -162,5 +162,9 @@ namespace tcs{
             // 断开连接
             socket.shutdown(tcp::socket::shutdown_send);
         }
+    }
+    void server::start() {
+        //tcs::socket::CreateTCPSocket();
+
     }
 }

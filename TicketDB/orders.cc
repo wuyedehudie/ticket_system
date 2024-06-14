@@ -9,5 +9,6 @@ namespace tcs {
         if(query("orders","user_id = '"+std::to_string(user_id))){
 
         }
+        return true;
     }
 } // tcs

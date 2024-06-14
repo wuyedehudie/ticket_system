@@ -1,5 +1,6 @@
 //
 // Created by 86178 on 2023/12/16.
+// 项目sql部分的第一版
 //
 
 #ifndef TICSKETSYSTEM_SQL_H_
@@ -9,12 +10,11 @@
 
 #include <mysql/mysql.h>
 #include "Log/log.h"
-
+#include "sql_connection_pool.h"
 #define root_user "ciji"
 #define root_db "ticket_system"
 #define root_password "Aa530311@"
 
-static auto db_log = TCS_LOG_NAME("db_log");
 
 namespace tcs{
 

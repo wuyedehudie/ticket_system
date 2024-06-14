@@ -6,8 +6,9 @@
 namespace tcs{
     admin::admin(std::string&& user, std::string&& id_card, std::string&& password)
     :m_user(std::move(user))
-    ,m_password(std::move(password))
-    ,m_id_card(std::move(id_card)){
+    ,m_isMatch(false)
+    ,m_password(password)
+    ,m_id_card(id_card){
         if(query("users","user_card = '"+id_card+"'")){
             TCS_LOG_ERROR(db_log)<<"查询失败 "<<mysql_errno(getConn_());
         }

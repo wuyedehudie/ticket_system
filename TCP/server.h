@@ -2,9 +2,9 @@
 // Created by 86178 on 2023/12/22.
 //
 
-#ifndef TICKETSYSTEM_SERVER_H
+#ifndef TICKETSYSTEM_TCPSERVER_H
 #define TICKETSYSTEM_SERVER_H
-#include "TCP/TcpConnection.h"
+#include "TCP/socket.h"
 #include "TicketDB/station.h"
 #include "admin.h"
 #include "TicketDB/seat.h"
@@ -23,10 +23,11 @@ namespace tcs {
         server();
         void run();
         void axio();
+        void start();
     private:
-        std::vector<TcpConnection> m_tcpList;
+        std::vector<socket> m_tcpList;
         std::map<std::string,std::tuple<int,std::string,std::string>> m_user_list;
     };
 }
 
-#endif //TICKETSYSTEM_SERVER_H
+#endif //TICKETSYSTEM_TCPSERVER_H
